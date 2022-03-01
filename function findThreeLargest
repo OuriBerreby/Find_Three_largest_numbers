@@ -1,0 +1,20 @@
+def findThreeLargestNumbers(array):
+		largest_numbers_array = []
+		if len(array) == 3:
+			return sorted(array)
+		
+		for current_idx in range(len(array)):
+			largest = array[current_idx]
+			next_idx = 0
+		
+			while next_idx < len(array):
+				if array[next_idx] > largest:
+					if array[next_idx] not in largest_numbers_array:
+						largest = array[next_idx]
+				next_idx += 1
+		
+			largest_numbers_array.append(largest)
+			if len(largest_numbers_array) == 3:
+				break
+		
+    	return sorted(largest_numbers_array)
